@@ -1,0 +1,66 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int choice;
+    while (true) {
+        cout << "Geometry Calculator" << endl;
+        cout << "1 - Area of Circle" << endl;
+        cout << "2 - Area of Rectangle" << endl;
+        cout << "3 - Area of Square" << endl;
+        cout << "4 - Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                cout << "Enter the radius of the circle: ";
+                double radius;
+                cin >> radius;
+                if (radius <= 0) {
+                    cout << "Invalid input. Radius should be a positive number." << endl;
+                } else {
+                    double area = 3.14159265359 * pow(radius, 2);
+                    cout << "The area of the circle with radius " << radius << " is " << area << endl;
+                }
+                break;
+            }
+            case 2: {
+                cout << "Enter the length of the rectangle: ";
+                double length;
+                cin >> length;
+                cout << "Enter the width of the rectangle: ";
+                double width;
+                cin >> width;
+                if (length <= 0 || width <= 0) {
+                    cout << "Invalid input. Length and width should be positive numbers." << endl;
+                } else {
+                    double area = length * width;
+                    cout << "The area of the rectangle with length " << length << " and width " << width << " is " << area << endl;
+                }
+                break;
+            }
+            case 3: {
+                cout << "Enter the side length of the square: ";
+                double side;
+                cin >> side;
+                if (side <= 0) {
+                    cout << "Invalid input. Side length should be a positive number." << endl;
+                } else {
+                    double area = pow(side, 2);
+                    cout << "The area of the square with side length " << side << " is " << area << endl;
+                }
+                break;
+            }
+            case 4:
+                cout << "Goodbye!" <<"Revisit"<< endl;
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+                break;
+        }
+    }
+
+    return 0;
+}
